@@ -57,7 +57,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/os/icones/1467078599_Information.png"))); // NOI18N
         btnSobre.setToolTipText("Sobre");
         btnSobre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSobre.setPreferredSize(new java.awt.Dimension(58, 58));
         btnSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSobreActionPerformed(evt);
@@ -143,12 +142,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSobre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSobre)
                     .addComponent(btnSair))
-                .addGap(49, 49, 49))
+                .addGap(67, 67, 67))
         );
 
-        setSize(new java.awt.Dimension(925, 537));
+        setSize(new java.awt.Dimension(925, 562));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
