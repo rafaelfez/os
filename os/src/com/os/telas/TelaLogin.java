@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.os.telas;
 
 import java.sql.*;
@@ -13,7 +8,13 @@ import javax.swing.JOptionPane;
  *
  * @author rafael
  */
+
+
 public class TelaLogin extends javax.swing.JFrame {
+    /**
+    * Essa conexão com o banco é feita da mesma maneira em todas as telas
+    * @author rafael
+    */
     Connection conexao = null;
     PreparedStatement pst=null;
     ResultSet rs = null;
@@ -34,7 +35,6 @@ public class TelaLogin extends javax.swing.JFrame {
                 if(perfil.equals("admin")){    
                     TelaPrincipal principal = new TelaPrincipal();
                     principal.setVisible(true);
-                    TelaPrincipal.MenRel.setEnabled(true);
                     TelaPrincipal.MenCadUsu.setEnabled(true);
                     TelaPrincipal.lblUsuario.setText(rs.getString(2));
                     TelaPrincipal.lblUsuario.setForeground(Color.red);

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.os.telas;
 
 import java.text.DateFormat;
@@ -34,17 +29,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         lblData = new javax.swing.JLabel();
+        btnSobre = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         Menu = new javax.swing.JMenuBar();
         MenCad = new javax.swing.JMenu();
         MenCadCli = new javax.swing.JMenuItem();
         MenCadOs = new javax.swing.JMenuItem();
         MenCadUsu = new javax.swing.JMenuItem();
-        MenRel = new javax.swing.JMenu();
-        MenRelSer = new javax.swing.JMenuItem();
-        MenAju = new javax.swing.JMenu();
-        MenAjuSob = new javax.swing.JMenuItem();
-        MenOpc = new javax.swing.JMenu();
-        MenOpcSai = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Controle de Ordem de Serviço");
@@ -62,6 +53,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         lblData.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         lblData.setText("Data");
+
+        btnSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/os/icones/1467078599_Information.png"))); // NOI18N
+        btnSobre.setToolTipText("Sobre");
+        btnSobre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSobre.setPreferredSize(new java.awt.Dimension(58, 58));
+        btnSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSobreActionPerformed(evt);
+            }
+        });
+
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/os/icones/1467078684_Remove.png"))); // NOI18N
+        btnSair.setToolTipText("Sair");
+        btnSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         MenCad.setText("Cadastro");
 
@@ -95,41 +105,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Menu.add(MenCad);
 
-        MenRel.setText("Relatório");
-        MenRel.setEnabled(false);
-
-        MenRelSer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
-        MenRelSer.setText("Serviço");
-        MenRel.add(MenRelSer);
-
-        Menu.add(MenRel);
-
-        MenAju.setText("Ajuda");
-        MenAju.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenAjuActionPerformed(evt);
-            }
-        });
-
-        MenAjuSob.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.SHIFT_MASK));
-        MenAjuSob.setText("Sobre");
-        MenAju.add(MenAjuSob);
-
-        Menu.add(MenAju);
-
-        MenOpc.setText("Opções");
-
-        MenOpcSai.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
-        MenOpcSai.setText("Sair");
-        MenOpcSai.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenOpcSaiActionPerformed(evt);
-            }
-        });
-        MenOpc.add(MenOpcSai);
-
-        Menu.add(MenOpc);
-
         setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,11 +114,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUsuario)
-                    .addComponent(lblData)
-                    .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblUsuario)
+                            .addComponent(lblData)
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(btnSobre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSair)))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -152,17 +134,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblUsuario)
                 .addGap(30, 30, 30)
                 .addComponent(lblData)
                 .addGap(39, 39, 39)
                 .addComponent(jLabel1)
-                .addGap(132, 132, 132))
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSobre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSair))
+                .addGap(49, 49, 49))
         );
 
-        setSize(new java.awt.Dimension(925, 553));
+        setSize(new java.awt.Dimension(925, 537));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -180,21 +166,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblData.setText(formatador.format(data));
     }//GEN-LAST:event_formWindowActivated
 
-    private void MenOpcSaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenOpcSaiActionPerformed
-        // TODO add your handling code here:
-        int sair = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Atenção", JOptionPane.YES_OPTION);
-        
-        if(sair == JOptionPane.YES_OPTION){
-            System.exit(0);
-        }
-    }//GEN-LAST:event_MenOpcSaiActionPerformed
-
-    private void MenAjuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenAjuActionPerformed
-        // TODO add your handling code here:
-        TelaSobre sobre = new TelaSobre();
-        sobre.setVisible(true);
-    }//GEN-LAST:event_MenAjuActionPerformed
-
     private void MenCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenCadCliActionPerformed
         // TODO add your handling code here:
         TelaCliente cliente = new TelaCliente();
@@ -208,6 +179,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         os.setVisible(true);
         Desktop.add(os);
     }//GEN-LAST:event_MenCadOsActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        int sair = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair do sistema?");
+        if(sair == JOptionPane.YES_OPTION){
+            System.exit(sair);
+        }
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
+        // TODO add your handling code here:
+        TelaSobre sobre = new TelaSobre();
+        sobre.setVisible(true);
+    }//GEN-LAST:event_btnSobreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,17 +231,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
-    private javax.swing.JMenu MenAju;
-    private javax.swing.JMenuItem MenAjuSob;
     private javax.swing.JMenu MenCad;
     private javax.swing.JMenuItem MenCadCli;
     private javax.swing.JMenuItem MenCadOs;
     public static javax.swing.JMenuItem MenCadUsu;
-    private javax.swing.JMenu MenOpc;
-    private javax.swing.JMenuItem MenOpcSai;
-    public static javax.swing.JMenu MenRel;
-    private javax.swing.JMenuItem MenRelSer;
     private javax.swing.JMenuBar Menu;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnSobre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblData;
     public static javax.swing.JLabel lblUsuario;
