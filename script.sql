@@ -54,10 +54,6 @@ create table tbOs(
 insert into tbOs(equipamento, defeito, servico, tecnico, valor, idCli)
 values('Macbook', 'Não liga', 'Trocar botão', 'Rogerio', 989.99, 1);
 
-select O.os,equipamento,defeito,servico,valor, C.nomeCli,foneCli
-from tbOs as O
-inner join tbClientes as C;
-
 alter table tbUsuarios add column perfil varchar(20) not null;
 
 update tbUsuarios set perfil='admin' where idUser=5;
@@ -66,8 +62,6 @@ update tbUsuarios set perfil='user' where idUser=2;
 update tbUsuarios set perfil='user' where idUser=3;
 update tbUsuarios set perfil='user' where idUser=4;
 
-on (O.idCli = C.idCli);
+alter table tbOs add tipo varchar(15) after data_os;
 
-alter table tbOs add tipo varchar(15) not null after data_os;
-
-alter table tbOs add situacao varchar(20) not null after tipo;
+alter table tbOs add situacao varchar(20) after tipo;

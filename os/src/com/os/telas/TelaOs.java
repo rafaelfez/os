@@ -59,8 +59,8 @@ public class TelaOs extends javax.swing.JInternalFrame {
             pst.setString(7, txtOsValor.getText().replace(",", "."));
             pst.setString(8, txtCliId.getText());
             
-            if ((txtCliId.getText().isEmpty()||txtOsEquip.getText().isEmpty()||txtOsDef.getText().isEmpty())) {
-                JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
+            if ((txtCliId.getText().isEmpty()||txtOsServ.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(null, "Preencha os campos obrigatórios");
             } else {
                 int adicionado = pst.executeUpdate();
                 if(adicionado>0){
@@ -220,20 +220,20 @@ public class TelaOs extends javax.swing.JInternalFrame {
         setToolTipText("");
         setPreferredSize(new java.awt.Dimension(640, 480));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameOpened(evt);
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
-            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
             }
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
-            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
             }
         });
 
@@ -370,11 +370,11 @@ public class TelaOs extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
         );
 
-        jLabel6.setText("Equipamento*");
+        jLabel6.setText("Equipamento");
 
-        jLabel7.setText("Defeito*");
+        jLabel7.setText("Defeito");
 
-        jLabel8.setText("Serviço");
+        jLabel8.setText("Serviço*");
 
         jLabel9.setText("Técnico");
 
@@ -504,7 +504,7 @@ public class TelaOs extends javax.swing.JInternalFrame {
                     .addComponent(btnOsExcluir)
                     .addComponent(btnOsPesquisar)
                     .addComponent(btnOsAdicionar))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnOsAdicionar, btnOsAlterar, btnOsExcluir, btnOsPesquisar});

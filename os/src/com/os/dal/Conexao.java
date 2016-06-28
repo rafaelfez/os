@@ -12,7 +12,7 @@ public class Conexao {
         String url="jdbc:mysql://localhost:3306/dbos";
         
         String user="root";
-        String password="234";
+        String password="";
         
         try {
             Class.forName(driver);

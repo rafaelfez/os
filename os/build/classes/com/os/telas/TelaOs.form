@@ -141,7 +141,7 @@
                   <Component id="btnOsPesquisar" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btnOsAdicionar" linkSize="2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace pref="50" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -367,17 +367,17 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Equipamento*"/>
+        <Property name="text" type="java.lang.String" value="Equipamento"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Defeito*"/>
+        <Property name="text" type="java.lang.String" value="Defeito"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Servi&#xe7;o"/>
+        <Property name="text" type="java.lang.String" value="Servi&#xe7;o*"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
