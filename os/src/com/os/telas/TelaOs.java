@@ -62,13 +62,13 @@ public class TelaOs extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Preencha os campos obrigatórios");
             } else {
                 int adicionado = pst.executeUpdate();
-                if(adicionado>0){
+                             txtOsTec.setText(null);
+       if(adicionado>0){
                     JOptionPane.showMessageDialog(null, "OS emitida com sucesso.");
                     txtCliId.setText(null);
                     txtOsEquip.setText(null);
                     txtOsDef.setText(null);
                     txtOsServ.setText(null);
-                    txtOsTec.setText(null);
                     txtOsValor.setText(null);
                 }
             }
@@ -89,12 +89,12 @@ public class TelaOs extends javax.swing.JInternalFrame {
             
             if (rs.next()) {
                 txtData.setText(rs.getString(2));
-                txtOsSit.setText(rs.getString(4));
-                txtOsEquip.setText(rs.getString(5));
-                txtOsDef.setText(rs.getString(6));
-                txtOsServ.setText(rs.getString(7));
-                txtOsTec.setText(rs.getString(8));
-                txtOsValor.setText(rs.getString(9));
+                txtOsSit.setText(rs.getString(3));
+                txtOsEquip.setText(rs.getString(4));
+                txtOsDef.setText(rs.getString(5));
+                txtOsServ.setText(rs.getString(6));
+                txtOsTec.setText(rs.getString(7));
+                txtOsValor.setText(rs.getString(8));
             } else {
                 JOptionPane.showMessageDialog(null, "OS não cadastrada");
                 txtData.setText(null);

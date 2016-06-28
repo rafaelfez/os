@@ -62,4 +62,4 @@ update tbUsuarios set perfil='user' where idUser=2;
 update tbUsuarios set perfil='user' where idUser=3;
 update tbUsuarios set perfil='user' where idUser=4;
 
-alter table tbOs add situacao varchar(20) after tipo;
+alter table tbOs add situacao varchar(100) after data_os;
