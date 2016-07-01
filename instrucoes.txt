@@ -1,0 +1,7 @@
+-Execute o script.sql no MySQL para criar o banco e suas tabelas
+
+-Na classe Conexao.java do projeto, ajuste a configuração de acordo com seu banco de dados, user/password/nome do banco
+
+-Importe as bibliotecas rs2xml.jar e mysql-connector-java.jar que estão na pasta do projeto se necessário.
+
+-Só executar, fique a vontade para modificações :)
